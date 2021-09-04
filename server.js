@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 //     optionSuccessStatus: 200
 // }
 // app.use(cors(corsOptions))
-app.use(cors())
+// app.use(cors())
 
 // const __dirname = fs.realpathSync('.')
 
@@ -53,11 +53,11 @@ mongoose.connect(process.env.MONGODBURI || mongodburl, {
 // });
 app.use("/api/users", userRoute)
 
-app.get("/api/cities", (req, res) => {
+app.get("/api/cities", cors(), (req, res) => {
     // console.log("done")
     res.send(data.cities);
 });
-app.get("/api/airlines", (req, res) => {
+app.get("/api/airlines", cors(), (req, res) => {
     // console.log("done")
     res.send(data.airlines);
 });
