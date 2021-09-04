@@ -30,7 +30,7 @@ app.use(cors())
 // const __dirname = fs.realpathSync('.')
 
 const mongodburl = config.MONGODB
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 mongoose.connect(process.env.MONGODBURI || mongodburl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
